@@ -1,0 +1,10 @@
+.sidebar {
+    flex: .2;
+    padding: 22px 10px;
+}
+
+.sidebar__nav {
+    bottom: 0;
+    margin: 8px 2px;
+    font-size: 12px;
+}

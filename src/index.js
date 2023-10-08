@@ -1,13 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client"; // This import is for the createRoot method
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { StateProvider } from "./StateProvider";
+import reducer, { initialState } from "./reducer";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Create a root for rendering
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// Render the app within the root
 root.render(
   <React.StrictMode>
-    <App />
+    {/* Wrap the App component with StateProvider */}
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+    </StateProvider>
   </React.StrictMode>
 );
 
